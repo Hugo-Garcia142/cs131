@@ -1,0 +1,127 @@
+    1  mkdir cs131
+    2  ls
+    3  echo "cs131" > cs131/README.md
+    4  cd cs131
+    5  git init
+    6  git add README.md
+    7  git commit -m "first commit"
+    8  git config --global user.email hugo.garcia01@sjsu.edu
+    9  git config --global user.name Hugo Garcia
+   10  git commit -m "first commit"
+   11  git remote add origin git@github.com:Hugo-Garcia142/cs131.git
+   12  git push -u origin main
+   13  git remote add origin git remote add origin https://github.com/Hugo-Garcia142/cs131.git
+   14  git push -u origin main
+   15  git remote -v
+   16  man git remote
+   17  git remote remove origin
+   18  git remote -v
+   19  git remote add origin git remote add origin https://github.com/Hugo-Garcia142/cs131.git
+   20  git remote add origin https://github.com/Hugo-Garcia142/cs131.git
+   21  git remote -v
+   22  git remote add origin git remote add origin https://github.com/Hugo-Garcia142/cs131.git
+   23  git push -u origin main
+   24  git push
+   25  git push --set-upstream origin master
+   26  git branch -M main
+   27  git push --set-upstream origin main
+   28  git status
+   29  ls
+   30  cat README.md 
+   31  git status
+   32  mkdir 0608
+   33  cd 0608
+   34  touch aa.txt
+   35  touch a.txt
+   36  touch b.txt
+   37  touch bb.txt
+   38  ls
+   39  mkdir copied/
+   40  ls
+   41  cp a*.txt copied/
+   42  ls
+   43  ls copied/
+   44  cd copied/
+   45  rm a*.txt
+   46  ls
+   47  cp [:alpha][:alpha:] copied/
+   48  cp [:alpha:][:alpha:] copied/
+   49  cp [ab][ab] copied/
+   50  cp [ab][ab].txt copied/
+   51  ..
+   52  .
+   53  ls
+   54  ..
+   55  /..
+   56  ../
+   57  cd ..
+   58  cp [ab][ab].txt copied/
+   59  ls
+   60  ls copied/
+   61  vi aa.txt
+   62  head -4 aa.txt
+   63  less aa.txt
+   64  vim b.txt
+   65  cat b.txt
+   66  sort b.txt
+   67  cat b.txt
+   68  wc b.txt
+   69  grep "ba" b.txt
+   70  tail -2 b.txt
+   71  sort b.txt
+   72  sort b.txt > sortedb.txt
+   73  cat sortedb.txt
+   74  ls
+   75  ls > lsresults.txt
+   76  cat lsresults.txt
+   77  less /dev/null/ -h 
+   78  /dev/null -h
+   79  history 500 > thirddayclass.txt
+   80  ls
+   81  cat thirddayclass.txt 
+   82  ls
+   83  cat b.txt
+   84  man uniq
+   85  uniq b.txt 
+   86  sort b.txt | uniq
+   87  cat b.txt | wc
+   88  sort b.txt | uniq | wc
+   89  grep "history" | wc
+   90  vim day3question
+   91  history | grep "uniq"
+   92  vim day3question
+   93  ls
+   94  git status
+   95  cd ~
+   96  ls
+   97  cd cs131
+   98  cp 0608/ .
+   99  cp 0608/ ~/cs131/
+  100  cd ..
+  101  cp 0608/ ~cs131/
+  102  cp 0608/ ~/cs131/ -r
+  103  ls
+  104  cd cs131/
+  105  ls
+  106  ls 0608/
+  107  ls ..
+  108  cd ..
+  109  rmdir 0608/ -r
+  110  rmdir 0608/
+  111  cs131
+  112  cd cs131
+  113  ls
+  114  git status
+  115  git commit -m "add in-class samples on June 8"
+  116  git push
+  117  vim README.md
+  118  cat README.md
+  119  vim README.md
+  120  git add README.md
+  121  git commit -m "edit README"
+  122  git log
+  123  cat README.md
+  124  git checkout8cbb373
+  125  git checkout 8cbb373
+  126  cat README.md
+  127  history > gittroubleshooting.txt

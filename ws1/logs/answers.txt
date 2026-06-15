@@ -1,0 +1,3 @@
+T1: cd /home/ishigaki-cs31/cs131/ws1
+T1: pwd
+T2: ls ../data/
