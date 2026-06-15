@@ -1,0 +1,8 @@
+B1: cat yelp_academic_dataset_business.json | grep '"city":"Santa Barbara"'
+B2: cat yelp_academic_dataset_business.json | grep 'state:CA' | wc -l
+B3: cat yelp_academic_dataset_review.json | grep 'worth' -i
+B4: cat yelp_academic_dataset_business.json | grep -E 'Coffee|Café|Cafe'
+B5: cat yelp_academic_dataset_business.json | grep -E 'stars:(4\.5|5\.0)'
+B6: cat yelp_academic_dataset-review.json | grep -E 'stars:5(,|\})'
+B7: cat yelp_academic_dataset_review.json | grep -E '\w+@[\w.]+\.[a-zA-Z]{2,}'
+B8: cat yelp_academic_dataset_review.json | grep -E '[0-9]{3}-[0-9]{3}-[0-9]{4}'
