@@ -1,0 +1,19 @@
+T1: cd /home/ishigaki-cs31/cs131/ws1
+T1: pwd
+T2: ls ../data/
+T3: file logs/app01.log
+T3: file .env
+T4: ls -alhr
+T5: ls -lS logs/
+T6: Size of file is 1038576 bytes, owner is ishigaki-cs31, and last-modification time is Jun 10 09:24.
+T7: data/Data1.csv  data/Data2.csv  data/Data3.csv
+The pattern data/Data?.csv matches Data1.csv but not Data10.csv
+T8: ls */[[:upper:]]*
+T9: The pattern is logs/BACKUP.???
+T10: cp data/ -r backup/
+T11: mv data/readme.txt data/README.md
+T12: rm -ri backup/data
+T13: git init
+     git add answers.txt
+     git commit -m "linux basics challenge" 
+T14: git clone https://github.com/Hugo-Garcia142/cs131.git
