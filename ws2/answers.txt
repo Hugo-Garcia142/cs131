@@ -1,0 +1,16 @@
+Q1: git add notes.md && git commit -m "ws2: add task line"
+Q2: git log --oneline -3
+Q3: git log --oneline 2a5e984
+Q4: git revert 2a5e984
+Q5: git rm --cached bigdata.bin && echo "bigdata.bin" >> .gitignore && git add .gitignore && git commit --amend --no-edit && git push
+Q6: git checkout -b feature-summary
+Q7: touch summary.md && echo "First line" >> summary.md && echo "Second line" >> summary.md && git add summary.md && git commit -m "Added summary.md"
+Q8: git diff main feature-summary
+Q9: git checkout main && git merge feature-summary
+Q10: git branch -D feature-summary
+Q11: git merge conflict-branch   File ws2/summary.md
+Q12: git status
+Q13: use :wq to save the changes you make to the conflicted file.
+Q14: git add summary.md && git commit
+Q15: git fetch origin && git log HEAD..origin/main --oneline
+Q16: The difference is that fetch does not also merge instantly after the command is done.
