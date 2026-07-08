@@ -1,0 +1,33 @@
+https://gist.github.com/zachbrowne/8bc414c9f30192067831fafebd14255c#file-the-ultimate-bad-ass-bashrc-file-L361-L399
+
+distribution () {
+  local dtype
+  dtype="unknown"
+  if [ -r /etc/rc.d/init.d/functions ]; then
+    source /etc/rc.d/init.d/functions
+    [ zz`type -t passed 2>/dev/null` == "zzfunction" ] && dtype="redhat"
+  elif [ -r /etc/rc.status ]; then
+    source /etc/rc.status
+    [ zz`type -t rc_reset 2>/dev/null` == "zzfunction" ] && dtype="suse"
+  elif [ -r /etc/debian_version ]; then
+    dtype="debian"
+  elif [ -r /etc/gentoo-release ]; then
+    dtype="gentoo"
+  elif [ -r /etc/arch-release ]; then
+    dtype="arch"
+  elif [ -r /etc/slackware-version ]; then
+    dtype="slackware"
+  fi
+  echo $dtype
+}
+This function checks the running Linux distribution the user has and puts it into a local variable that stays within this functions scope only. It evaluates a series of if and elif statements that check for file locations specific to certain distributions. The single brackets with the -r flag checks if the file is readable. If it is readable, it is sourced to bring metadata that can show if the distribution is in the file or not. If the function in the checked location passes, it returns the string 'function' because of type -t flag making the output concise. The 'zz' strings added are legacy workarounds for the single square bracket substitutions. Double square brackets are a new fix that make 'zz' no longer needed to prevent missing input for comparisons. To keep the comparison from activating error messages while the script is not even finished, outputting to dev/null is used to remove error text. Finally, after success of the function passing, the linux distribution you are using is copied to a variable and the rest of the elifs are skipped. Your distribution is then printed at the end.
+
+https://gist.github.com/zachbrowne/8bc414c9f30192067831fafebd14255c#file-the-ultimate-bad-ass-bashrc-file-L567-L573
+
+trim() {
+  local var=$@
+  var="${var#"${var%%[![:space:]]*}"}"
+  var="${var%"${var##*[![:space:]]}"}"
+  echo -n "$var"
+}
+This function removes all leading and trailing whitespace from an entire line of input which is got through $@. The keyword local is used to keep var in local scope. A mix of POSIX character classes and wildcards are used to consistently remove whitespaces for any possbible line of input. Variable var is updated withe string of characters, until it is cleared of edge whitespaces and then gets printed out with echo. The -n flag prevents an appended newline character after the line of input.
