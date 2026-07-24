@@ -1,0 +1,8 @@
+time du -h
+time wc -1 may_of_each_year_sample_2019_to_2026.csv
+time head may_of_each_year_sample_2019_to_2026.csv
+time tail may_of_each_year_sample_2019_to_2026.csv
+time cut -d',' -f 1-5 may_of_each_year_sample_2019_to_2026.csv | head -n 10 | column -t -s','
+time cat may_of_each_year_sample_2019_to_2026.csv sort | uniq -c | sort -nr
+time awk -F, 'NR > 1 {sum += $5; n++} END fif (n › 0) print sum / n}' may_of_each_year_sample_2019_to_2026. csv
+time grep -c "2019-05-01" may_of_each_year_sample_2019_t0_2026.csv
