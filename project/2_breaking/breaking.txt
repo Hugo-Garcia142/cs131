@@ -1,0 +1,25 @@
+Instead of using 89 parquets of data in Excel, a CSV of one month's data from May 
+from 2025 was used for Excel specifically. Excel does not open parquets, and the single month of NYC Taxi data 
+was enough to break Excel by hitting the row cap and prompt a warning.
+
+For Pandas, every May and March month from every year from 2019 to 2026 taxi data was 
+put into a CSV file in an attempt to use up too much memory. The size of the CSV file 
+was a big 6.1 GB, however Pandas was still able to load the CSV in 88.19 seconds without
+running out of memory. 
+
+The whole dataset of 89 parquets can't be used with awk, so a sample of every May from 
+each year turned into a CSV was used instead to work the CLI. In the first usage of awk
+in Phase 1, only every May was used. For Phase 2, to provide a fair comparison to Pandas, 
+the updated May + March from every year CSV file was used. This time, awk had a slightly
+different average for the same column, and took around 2 time longer from 54.98 seconds 
+to 113.09 seconds. This is expected because the CSV file used for the Phase 1 awk had only
+May month data, which is around half the data you would have with both May and March data
+for each year. With Pandas just loading the CSV took 88.19 seconds, it would take a couple
+seconds longer to aggregate trip distance average, so it would be faster than CLI with
+awk. If Pandas can keep its data loaded, it can perform other aggregations very fast around
+a few seconds, while the CLI will be consistenly slow. 
+
+PySpark also used the same May and March data, and finished aggregation of average in 25.60
+seconds. At 6.1 GB of the data size, PySpark is already faster at average aggregation than
+the CLI. Pandas would outpace PySpark if the CSV file never gets unloaded, but with much 
+bigger CSV files, PySpark will not face the same RAM issues that will throttle Pandas.
