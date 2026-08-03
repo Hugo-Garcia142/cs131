@@ -2,19 +2,20 @@ import time
 from pyspark.sql import SparkSession
 import pyspark.sql.functions as F
 
+# Initialize Spark Session
 spark = SparkSession.builder \
-    .appName("CS131Phase3TaxiAnalysis") \
+    .appName("CS131Phase3FullParquetAnalysis") \
     .getOrCreate()
 
-gcs_input_path = "gs://cs131-taxi-data/data/may_of_each_year_sample_2019_to_2026.csv"
+# Path matching ALL Parquet files in GCS
+gcs_parquet_path = "gs://cs131-taxi-data/parquet_data/*.parquet"
 
 start_time = time.time()
 
-df = spark.read \
-    .option("header", "true") \
-    .option("inferSchema", "true") \
-    .csv(gcs_input_path)
+# 1. Read All Parquet Files concurrently via Columnar Reader
+df = spark.read.parquet(gcs_parquet_path)
 
+# 2. Perform Grouped Aggregations
 aggregated_df = df.filter(F.col("payment_type").isin(1, 2)) \
     .groupBy("payment_type") \
     .agg(
@@ -25,9 +26,10 @@ aggregated_df = df.filter(F.col("payment_type").isin(1, 2)) \
     ) \
     .orderBy("payment_type")
 
+# 3. Output Trigger
 aggregated_df.show()
 
 end_time = time.time()
-print(f"=== PYSPARK EXECUTION TIME: {end_time - start_time:.2f} SECONDS ===")
+print(f"=== PYSPARK PARQUET EXECUTION TIME: {end_time - start_time:.2f} SECONDS ===")
 
 spark.stop()
