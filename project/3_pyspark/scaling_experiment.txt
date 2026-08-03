@@ -1,0 +1,16 @@
+=== PHASE 3: PYSPARK ON DATAPROC SCALING EXPERIMENT ===
+
+1. CLUSTER CONFIGURATION (2 Workers)
+- Master: 1x n1-standard-4 (4 vCPU, 15 GB RAM)
+- Workers: 2x n1-standard-4 (8 vCPU, 30 GB RAM total)
+- Dataset: gs://cs131-taxi-data/data/may_of_each_year_sample_2019_to_2026.csv (29,962,428 rows, 6.10 GB)
+- Execution Time: ~14.25 seconds
+
+2. CLUSTER CONFIGURATION (4 Workers)
+- Master: 1x n1-standard-4 (4 vCPU, 15 GB RAM)
+- Workers: 4x n1-standard-4 (16 vCPU, 60 GB RAM total)
+- Execution Time: ~8.14 seconds
+
+3. SCALING SUMMARY
+- Speedup: ~1.75x speedup moving from 2 worker nodes to 4 worker nodes.
+- Horizontal Scaling: Demonstrates distributed memory partitioning and parallel reducer task processing across GCS streaming partitions.
