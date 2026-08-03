@@ -1,0 +1,125 @@
+Job [f36f6836f9fc4d3c99aee65fe754124e] submitted.
+Waiting for job output...
+26/08/03 06:52:33 INFO SparkEnv: Registering MapOutputTracker
+26/08/03 06:52:33 INFO SparkEnv: Registering BlockManagerMaster
+26/08/03 06:52:33 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/08/03 06:52:33 INFO SparkEnv: Registering OutputCommitCoordinator
+26/08/03 06:52:35 INFO DataprocSparkPlugin: Registered 128 driver metrics
+26/08/03 06:52:36 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at taxi-analysis-m.c.decisive-fabric-504423-f0.internal./10.128.0.30:8032
+26/08/03 06:52:36 INFO AHSProxy: Connecting to Application History server at taxi-analysis-m.c.decisive-fabric-504423-f0.internal./10.128.0.30:10200
+26/08/03 06:52:36 INFO Configuration: resource-types.xml not found
+26/08/03 06:52:36 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+26/08/03 06:52:37 INFO YarnClientImpl: Submitted application application_1785738127347_0006
+26/08/03 06:52:38 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at taxi-analysis-m.c.decisive-fabric-504423-f0.internal./10.128.0.30:8030
+26/08/03 06:52:40 INFO GoogleCloudStorageImpl: Ignoring exception of type GoogleJsonResponseException; verified object already exists with desired state.
+=== YEARLY ===
++-----------+-----------+------------------+------------------+------------------+------------------+-------------------+------------------------+------------------+--------------------+
+|pickup_year|total_trips|avg_distance      |avg_trip_minutes  |avg_fare          |avg_recorded_tip  |avg_mta_tax        |avg_congestion_surcharge|avg_total_amount  |gross_revenue       |
++-----------+-----------+------------------+------------------+------------------+------------------+-------------------+------------------------+------------------+--------------------+
+|2019       |84115408   |3.0212700711146088|14.585442460591066|13.428422181587404|2.1965018085682737|0.49634870260630504|2.204467383317482       |19.227974666356264|1.6173689340742211E9|
+|2020       |24466793   |2.8816640538052365|12.979950506794433|12.726964786522291|2.0927619426903266|0.5167076159102666 |2.288536438795953       |18.520025910026238|4.5312564029524857E8|
+|2021       |30643661   |3.1961986288124202|14.188195567863998|13.598097763209607|2.356058539808498 |0.4967698242713239 |2.3102965470098695      |19.82619147897947 |6.075470906029356E8 |
+|2022       |39317226   |3.5084036671355476|15.78598414894869 |15.016511919745067|2.769395244722319 |0.4951581884235781 |2.310721869796832       |21.910977629077557|8.614788593233865E8 |
+|2023       |37875048   |3.4559856359783687|16.39135491436635 |19.90988301981096 |3.5587669071742023|0.49530314100195927|2.3090196098320406      |28.99226846146604 |1.0980835596069124E9|
+|2024       |40395831   |3.3618018641575356|16.80562212760747 |19.946439069407074|3.3679002159922105|0.49418034870974686|2.3037680001370138      |28.73595764492223 |1.1608128886474364E9|
+|2025       |45302622   |3.401399316797656 |17.12775321518396 |20.206673644845704|3.0127788473240997|0.4933926387307119 |2.274179180762806       |28.967504765844208|1.3123039186902387E9|
+|2026       |18636753   |3.3914223904759417|17.749288575108952|21.594603797143133|2.8305017440529294|0.493808959103552  |2.216897342448059       |30.390014473036427|5.66371193400405E8  |
++-----------+-----------+------------------+------------------+------------------+------------------+-------------------+------------------------+------------------+--------------------+
+
+=== TIP_BY_DURATION ===
++---------------+-----------+------------------+------------------+------------------+-------------------+--------------------+------------------------+------------------+
+|duration_bucket|total_trips|avg_distance      |avg_fare          |avg_recorded_tip  |avg_mta_tax        |avg_tolls           |avg_congestion_surcharge|avg_total_amount  |
++---------------+-----------+------------------+------------------+------------------+-------------------+--------------------+------------------------+------------------+
+|01: 0-10 min   |127606570  |1.0659560517142492|8.002264942235866 |1.6355263007229008|0.4950409384093623 |0.021336604377032758|2.311881595960375       |13.570581895000705|
+|02: 11-20 min  |115028315  |2.51536454976306  |14.130040919836107|2.399812569017956 |0.5032780841830116 |0.12656425724393508 |2.352190473892196       |20.7935195789469  |
+|03: 21-30 min  |44717116   |5.167415221276575 |24.86419738786059 |3.7845145129662714|0.49557660270398457|0.7940272608364166  |2.235411437856242       |33.76938842890364 |
+|04: 31-45 min  |21569999   |9.638768462158705 |40.465166065604336|5.9621495415925425|0.48635068133290144|2.3715261201434465  |1.9515553247933752      |53.28923947289953 |
+|05: 46-60 min  |7357703    |14.277760443714588|55.33082833460618 |7.887270240453977 |0.4796993341536073 |3.9520276287290517  |1.7550886402031693      |71.88577879943966 |
+|06: 61-180 min |4473639    |16.793350198797857|64.25299291024771 |8.159606072371224 |0.47360655832980725|4.543171449459958   |1.6381355126489456      |81.61598288776376 |
++---------------+-----------+------------------+------------------+------------------+-------------------+--------------------+------------------------+------------------+
+
+=== TIP_BY_HOUR ===
++-----------+-----------+------------------+------------------+------------------+------------------+-------------------+------------------------+------------------+
+|pickup_hour|total_trips|avg_distance      |avg_trip_minutes  |avg_fare          |avg_recorded_tip  |avg_mta_tax        |avg_congestion_surcharge|avg_total_amount  |
++-----------+-----------+------------------+------------------+------------------+------------------+-------------------+------------------------+------------------+
+|0          |8980843    |3.8313439428793283|13.725934016810369|17.48419203631568 |2.7123336740214596|0.49482433330590475|2.2204745777179986      |24.84540712379346 |
+|1          |6008940    |3.5068916980366027|12.689408975071611|16.2062019307893  |2.450249591442009 |0.4939760739830985 |2.2609831070501603      |23.120936967250213|
+|2          |4025055    |3.3136937308931143|11.961832227551351|15.364241837688851|2.262062754421938 |0.4928178795072366 |2.2937314298660425      |21.995019941349053|
+|3          |2745347    |3.6031706738711   |12.099898039604229|16.432540323681994|2.2377670982939857|0.48963880704333546|2.2701512820866756      |23.0823143741081  |
+|4          |2083615    |4.8064083671887605|13.593493215717235|20.527129508090265|2.527178288695393 |0.48310105753702093|2.1177972029246903      |27.80812263782414 |
+|5          |2399791    |5.527785411312904 |14.652345301458901|22.193037118648736|2.9003252283219663|0.484461488521292  |1.9688527771200042      |30.126595432691296|
+|6          |5467399    |4.367562372894308 |14.326193167903051|18.21151218339804 |2.498424173907884 |0.49165287552636994|2.099457700535611       |24.935155992819315|
+|7          |9984528    |3.4659644451896083|14.696910528302745|16.20416148965709 |2.465344590149886 |0.49488741781284007|2.1956723566172323      |22.704805086410897|
+|8          |13216213   |3.058322964377175 |15.290576605920837|15.75588160844617 |2.5065668705550084|0.4959718430688127 |2.245079443308366       |22.260086812287476|
+|9          |14158567   |2.9577022342727113|15.252114870334871|15.611798411520555|2.5519464872396966|0.531259473504628  |2.2682989694093143      |22.292510457423507|
+|10         |14941527   |2.977488077356489 |15.4074388280395  |15.786882635891727|2.577865726173591 |0.4958460878864657 |2.274898642172381       |22.468146785772465|
+|11         |16037216   |2.952021037816053 |15.821693274776191|15.891363695544664|2.6094564075209044|0.49554142813815083|2.2898427896515154      |22.604501140317954|
+|12         |17339661   |3.020901615089258 |16.111666871687902|16.28307975455855 |2.647779969285212 |0.4951904769072476 |2.2855603797562374      |23.064937053813065|
+|13         |17814402   |3.1679218948803674|16.58166165312014 |16.774224205786364|2.72686293988403  |0.49464650735960713|2.278691079527069       |23.691843338298064|
+|14         |19018504   |3.302126198254101 |17.621996701212616|17.36136462573571 |2.8282099280782806|0.4944479812923247 |2.268902530234165       |24.44474394618586 |
+|15         |19455058   |3.2921368319745263|18.15922094826607 |17.53037708702864 |2.8450317079495115|0.4942351474870957 |2.2644300447440724      |24.639580701818225|
+|16         |19156854   |3.2759698085082745|18.249519473987316|17.756872864929328|3.0282965517196407|0.49470098430566944|2.269429999202167       |26.180668200509505|
+|17         |21079418   |3.0276135009990077|17.198025559023097|16.846688695580475|2.8993644335909674|0.49568332294563366|2.28988661416689        |25.05070517931962 |
+|18         |22281475   |2.8489872070857736|15.518329747020651|15.811002175125992|2.774359101450729 |0.49641174249011794|2.307860859618013       |23.80647977163318 |
+|19         |20049346   |2.9927130605657353|14.509610383301261|15.619278077699553|2.7629410031627155|0.4966640378194879 |2.3040942945887726      |23.579373010945517|
+|20         |17828233   |3.282474718610667 |14.240064679993793|16.017017153635447|2.7967427495477466|0.49668041807620533|2.2942771387990217      |23.568275371963324|
+|21         |17615381   |3.3768030762434473|14.169089089434546|16.325040710161836|2.8474951288307775|0.496798411002294  |2.2963815919778754      |23.92182937965193 |
+|22         |16267695   |3.5350177631188946|14.421318721961915|16.907661136996428|2.85493748622646  |0.4965652982798117 |2.28236841218248        |24.491409313956435|
+|23         |12798274   |3.8036730007499564|14.439952180270602|17.63243920078656 |2.831001342837292 |0.4957295038377831 |2.2367347405270013      |25.220139100766524|
++-----------+-----------+------------------+------------------+------------------+------------------+-------------------+------------------------+------------------+
+
+=== TIP_BY_DISTANCE ===
++----------------+-----------+------------------+------------------+------------------+--------------------+------------------------+------------------+
+|distance_bucket |total_trips|avg_trip_minutes  |avg_fare          |avg_recorded_tip  |avg_tolls           |avg_congestion_surcharge|avg_total_amount  |
++----------------+-----------+------------------+------------------+------------------+--------------------+------------------------+------------------+
+|01: Under 1 mile|74209193   |6.363450119537668 |8.380744167099735 |1.54029227281918  |0.04696756330445914 |2.2831911596865764      |13.916116559277198|
+|02: 1-3 miles   |155611335  |12.391229829005267|11.500822566493259|2.1357117593007136|0.008006774827810356|2.389873321621345       |17.708214566226747|
+|03: 3-5 miles   |38412228   |20.68964327323065 |19.361009019573686|2.965315902530153 |0.0933520075950925  |2.329980845569351       |26.48909464124635 |
+|04: 5-10 miles  |29050255   |26.821133010708564|29.577155642862984|4.3242592600307175|1.444177109975882   |2.026354639473185       |39.8558036193488  |
+|05: 10-20 miles |20612384   |42.57889011528216 |52.86113369807121 |7.853122307928906 |4.167479884907289   |1.6507222481101116      |69.57716930761427 |
+|06: 20+ miles   |2857947    |53.99275565058884 |77.54995421888566 |10.175189942290405|6.008266192478876   |1.3261584425828783      |97.73157564852809 |
++----------------+-----------+------------------+------------------+------------------+--------------------+------------------------+------------------+
+
+26/08/03 07:01:14 INFO PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+26/08/03 07:01:16 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://cs131-taxi-data/phase4_results/yearly/' directory.
+26/08/03 07:02:52 INFO PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+26/08/03 07:02:53 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://cs131-taxi-data/phase4_results/tip_by_duration/' directory.
+26/08/03 07:04:23 INFO PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+26/08/03 07:04:24 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://cs131-taxi-data/phase4_results/tip_by_hour/' directory.
+26/08/03 07:05:55 INFO PathOutputCommitterFactory: No output committer factory defined, defaulting to FileOutputCommitterFactory
+26/08/03 07:05:57 INFO GoogleCloudStorageFileSystem: Successfully repaired 'gs://cs131-taxi-data/phase4_results/tip_by_distance/' directory.
+METRIC|input_files|89
+METRIC|execution_seconds|795.31
+METRIC|output_path|gs://cs131-taxi-data/phase4_results
+26/08/03 07:05:58 INFO DataprocSparkPlugin: Shutting down driver plugin. metrics=[files_created=5, gcs_api_server_not_implemented_error_count=0, gcs_api_server_timeout_count=0, action_http_post_request_failures=0, op_get_list_status_result_size=89, op_open=0, gcs_api_client_unauthorized_response_count=0, action_http_head_request_failures=0, stream_read_close_operations=0, stream_read_bytes_backwards_on_seek=0, exception_count=92, gcs_api_total_request_count=104, op_create=5, gcs_api_client_bad_request_count=0, op_create_non_recursive=0, gcs_api_client_gone_response_count=0, stream_write_operations=0, stream_read_operations=0, gcs_api_client_request_timeout_count=0, op_rename=0, op_get_file_status=6, stream_read_total_bytes=0, op_glob_status=1, stream_read_exceptions=0, action_http_get_request_failures=0, op_exists=0, stream_write_bytes=3707025, op_xattr_list=0, stream_write_exceptions=0, gcs_api_server_unavailable_count=0, directories_created=0, files_delete_rejected=0, op_xattr_get_named=0, op_hsync=0, stream_read_operations_incomplete=0, op_delete=8, stream_read_bytes=0, gcs_api_client_non_found_response_count=52, gcs_api_client_requested_range_not_statisfiable_count=0, op_hflush=0, op_list_status=1, op_xattr_get_named_map=0, gcs_api_client_side_error_count=136, op_get_file_checksum=0, action_http_delete_request_failures=0, gcs_api_server_internal_error_count=0, stream_read_seek_bytes_skipped=0, stream_write_close_operations=4, op_list_files=0, files_deleted=0, op_mkdirs=5, gcs_api_client_rate_limit_error_count=0, action_http_put_request_failures=0, gcs_api_server_bad_gateway_count=0, stream_read_seek_backward_operations=0, gcs_api_server_side_error_count=0, action_http_patch_request_failures=0, stream_read_seek_operations=0, stream_read_seek_forward_operations=0, gcs_api_client_precondition_failed_response_count=1, directories_deleted=0, op_xattr_get_map=0, delegation_tokens_issued=0, op_create_min=64, op_delete_min=26, op_mkdirs_min=121, op_create_non_recursive_min=0, op_glob_status_min=207, op_hsync_min=0, op_xattr_get_named_min=0, op_list_status_min=114, op_xattr_get_named_map_min=0, stream_read_close_operations_min=0, stream_read_operations_min=0, stream_read_seek_operations_min=0, op_hflush_min=0, op_xattr_get_map_min=0, op_xattr_list_min=0, stream_write_operations_min=0, op_get_file_status_min=22, op_open_min=0, op_rename_min=0, delegation_tokens_issued_min=0, stream_write_close_operations_min=137, stream_read_close_operations_max=0, stream_read_operations_max=0, stream_read_seek_operations_max=0, op_hflush_max=0, op_xattr_list_max=0, op_xattr_get_map_max=0, op_xattr_get_named_max=0, op_create_non_recursive_max=0, op_glob_status_max=207, op_get_file_status_max=356, stream_write_close_operations_max=165, op_open_max=0, delegation_tokens_issued_max=0, op_mkdirs_max=217, op_rename_max=0, op_create_max=109, op_delete_max=184, op_list_status_max=114, op_xattr_get_named_map_max=0, stream_write_operations_max=0, op_hsync_max=0, op_list_status_mean=114, stream_read_close_operations_mean=0, op_open_mean=0, op_xattr_get_named_map_mean=0, op_xattr_list_mean=0, op_mkdirs_mean=150, stream_write_close_operations_mean=147, op_rename_mean=0, op_hsync_mean=0, delegation_tokens_issued_mean=0, stream_read_operations_mean=0, op_xattr_get_map_mean=0, op_create_mean=77, op_glob_status_mean=207, op_delete_mean=102, stream_read_seek_operations_mean=0, stream_write_operations_mean=0, op_create_non_recursive_mean=0, op_hflush_mean=0, op_xattr_get_named_mean=0, op_get_file_status_mean=94, stream_write_operations_duration=0, stream_read_operations_duration=0]
+Job [f36f6836f9fc4d3c99aee65fe754124e] finished successfully.
+done: true
+driverControlFilesUri: gs://dataproc-staging-us-central1-741125907338-4ef25cwa/google-cloud-dataproc-metainfo/bda57d54-133c-47b4-97c5-c18e992732bd/jobs/f36f6836f9fc4d3c99aee65fe754124e/
+driverOutputResourceUri: gs://dataproc-staging-us-central1-741125907338-4ef25cwa/google-cloud-dataproc-metainfo/bda57d54-133c-47b4-97c5-c18e992732bd/jobs/f36f6836f9fc4d3c99aee65fe754124e/driveroutput
+jobUuid: 50e51cad-670c-381c-ad65-c623f843b0ac
+placement:
+  clusterName: taxi-analysis
+  clusterUuid: bda57d54-133c-47b4-97c5-c18e992732bd
+pysparkJob:
+  mainPythonFileUri: gs://dataproc-staging-us-central1-741125907338-4ef25cwa/google-cloud-dataproc-metainfo/bda57d54-133c-47b4-97c5-c18e992732bd/jobs/f36f6836f9fc4d3c99aee65fe754124e/staging/phase4_analysis.py#1785739947248731
+reference:
+  jobId: f36f6836f9fc4d3c99aee65fe754124e
+  projectId: decisive-fabric-504423-f0
+status:
+  state: DONE
+  stateStartTime: '2026-08-03T07:06:01.952765Z'
+statusHistory:
+- state: PENDING
+  stateStartTime: '2026-08-03T06:52:27.502558Z'
+- state: SETUP_DONE
+  stateStartTime: '2026-08-03T06:52:27.582964Z'
+- details: Agent reported job success
+  state: RUNNING
+  stateStartTime: '2026-08-03T06:52:28.034315Z'
+yarnApplications:
+- memoryMbSeconds: '20084883'
+  name: CS131Phase4Analysis
+  progress: 1.0
+  state: FINISHED
+  trackingUrl: http://taxi-analysis-m.c.decisive-fabric-504423-f0.internal.:8088/proxy/application_1785738127347_0006/
+  vcoreSeconds: '3181'

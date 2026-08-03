@@ -1,0 +1,62 @@
+CS 131 Phase 4 — Final Analysis
+
+Research question:
+How do trip duration, trip distance, pickup hour, and year relate to fare,
+recorded tips, demand, and total trip cost in NYC Yellow Taxi trips from
+January 2019 through May 2026?
+
+Dataset:
+89 monthly Parquet files
+5,196,788,554 bytes
+Approximately 5.20 GB
+January 2019 through May 2026
+
+Main findings:
+
+1. Trip duration
+Average recorded tips increased with trip duration.
+Trips lasting 0-10 minutes averaged about $1.64 in recorded tips.
+Trips lasting 31-45 minutes averaged about $5.96.
+Trips lasting 61-180 minutes averaged about $8.16.
+
+2. Trip distance
+Average recorded tips increased with distance.
+Trips under 1 mile averaged about $1.54.
+Trips from 5-10 miles averaged about $4.32.
+Trips over 20 miles averaged about $10.18.
+
+3. Demand by hour
+Taxi demand was lowest during the early morning.
+Demand increased through the day and peaked near 6 PM.
+
+4. Total trip cost
+Longer and farther trips produced higher fares, tolls, and total amounts.
+Trips over 20 miles averaged about $77.55 in fare and $97.73 in total cost.
+
+Conclusion:
+Distance and duration had strong positive relationships with recorded tip
+amount and total trip cost. Pickup hour was most useful for identifying demand.
+A self-driving taxi service could position more vehicles during afternoon and
+evening demand peaks while using longer trips as higher-revenue opportunities.
+
+Limitation:
+The tip_amount field mainly reflects electronically recorded tips. Cash tips
+may be missing, so near-zero cash tips do not mean cash passengers never tip.
+
+Row count:
+The Phase 4 analysis retained 320,753,342 valid trip records after filtering.
+The filters removed trips with invalid or extreme values, including nonpositive
+trip duration, trips longer than 180 minutes, distances above 100 miles, and
+negative fare or total amounts.
+
+Yearly analyzed row counts:
+2019: 84,115,408
+2020: 24,466,793
+2021: 30,643,661
+2022: 39,317,226
+2023: 37,875,048
+2024: 40,395,831
+2025: 45,302,622
+2026 through May: 18,636,753
+
+Total analyzed rows: 320,753,342
