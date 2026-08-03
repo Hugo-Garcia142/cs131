@@ -1,0 +1,73 @@
+CS 131 Phase 3 — PySpark Scaling Experiment
+
+Dataset:
+NYC Yellow Taxi trip records from January 2019 through May 2026.
+
+Storage:
+89 monthly Parquet files stored in Google Cloud Storage.
+
+GCS input path:
+gs://cs131-taxi-data/parquet_data/*.parquet
+
+Dataset size:
+5,196,788,554 bytes
+Approximately 5.20 GB
+4.84 GiB
+
+PySpark operation:
+The same PySpark program was used for each cluster configuration.
+The program read all Parquet files directly from GCS, filtered payment_type
+to values 1 and 2, grouped by payment_type, and calculated:
+- total trip count
+- average fare amount
+- average recorded tip amount
+- gross revenue
+
+Cluster configuration:
+Region: us-central1
+Zone: us-central1-a
+Machine type: n1-standard-4
+Boot disk: 50 GB
+Dataproc image: 2.1-debian11
+
+Scaling results:
+
+1 node — single-node baseline
+Runtime: 80.12 seconds
+Job ID: f8788b925ff14c61883ccbbf43fa2192
+
+2 workers
+Runtime: 49.47 seconds
+Job ID: 3488fbd1999a4b3fb3b16d3e3f8bd79f
+Speedup over baseline: 1.62x
+Runtime reduction: 38.3%
+
+4 workers
+Runtime: 39.93 seconds
+Job ID: 1aca558dcb0c45a8845a7923841ea1e6
+Speedup over baseline: 2.01x
+Runtime reduction: 50.2%
+
+Validation:
+All three runs produced the same aggregation results.
+
+Payment type 1:
+Trips: 234,290,197
+Average fare: approximately $16.36
+Average recorded tip: approximately $3.66
+Gross revenue: approximately $5.795 billion
+
+Payment type 2:
+Trips: 61,753,016
+Average fare: approximately $14.54
+Average recorded tip: approximately $0.00
+Gross revenue: approximately $1.145 billion
+
+Conclusion:
+Increasing the number of workers reduced runtime, but performance did not
+scale linearly. The 4-worker cluster was about twice as fast as the single-node
+baseline rather than four times as fast. Spark startup, scheduling, shuffle,
+network, and coordination overhead limited the speedup.
+
+Cluster cleanup:
+Each Dataproc cluster was deleted after the job completed.

@@ -1,0 +1,54 @@
+Job [1aca558dcb0c45a8845a7923841ea1e6] submitted.
+Waiting for job output...
+26/08/03 05:37:52 INFO SparkEnv: Registering MapOutputTracker
+26/08/03 05:37:52 INFO SparkEnv: Registering BlockManagerMaster
+26/08/03 05:37:52 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/08/03 05:37:52 INFO SparkEnv: Registering OutputCommitCoordinator
+26/08/03 05:37:54 INFO DataprocSparkPlugin: Registered 128 driver metrics
+26/08/03 05:37:54 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at taxi-cluster-4-m.c.decisive-fabric-504423-f0.internal./10.128.0.23:8032
+26/08/03 05:37:55 INFO AHSProxy: Connecting to Application History server at taxi-cluster-4-m.c.decisive-fabric-504423-f0.internal./10.128.0.23:10200
+26/08/03 05:37:55 INFO Configuration: resource-types.xml not found
+26/08/03 05:37:55 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+26/08/03 05:37:57 INFO YarnClientImpl: Submitted application application_1785735327269_0001
+26/08/03 05:37:58 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at taxi-cluster-4-m.c.decisive-fabric-504423-f0.internal./10.128.0.23:8030
+26/08/03 05:38:00 INFO GoogleCloudStorageImpl: Ignoring exception of type GoogleJsonResponseException; verified object already exists with desired state.
++------------+-----------+------------------+--------------------+--------------------+
+|payment_type|total_trips|          avg_fare|             avg_tip|       gross_revenue|
++------------+-----------+------------------+--------------------+--------------------+
+|           1|  234290197| 16.35926495558749|   3.664277961919321| 5.795028122497007E9|
+|           2|   61753016|14.540579660757151|9.408811708888841E-4|1.1453612146694388E9|
++------------+-----------+------------------+--------------------+--------------------+
+
+=== PYSPARK PARQUET EXECUTION TIME: 39.93 SECONDS ===
+26/08/03 05:38:42 INFO DataprocSparkPlugin: Shutting down driver plugin. metrics=[files_created=1, gcs_api_server_not_implemented_error_count=0, gcs_api_server_timeout_count=0, action_http_post_request_failures=0, op_get_list_status_result_size=89, op_open=0, gcs_api_client_unauthorized_response_count=0, action_http_head_request_failures=0, stream_read_close_operations=0, stream_read_bytes_backwards_on_seek=0, exception_count=16, gcs_api_total_request_count=16, op_create=1, gcs_api_client_bad_request_count=0, op_create_non_recursive=0, gcs_api_client_gone_response_count=0, stream_write_operations=0, stream_read_operations=0, gcs_api_client_request_timeout_count=0, op_rename=0, op_get_file_status=2, stream_read_total_bytes=0, op_glob_status=1, stream_read_exceptions=0, action_http_get_request_failures=0, op_exists=0, stream_write_bytes=732331, op_xattr_list=0, stream_write_exceptions=0, gcs_api_server_unavailable_count=0, directories_created=0, files_delete_rejected=0, op_xattr_get_named=0, op_hsync=0, stream_read_operations_incomplete=0, op_delete=0, stream_read_bytes=0, gcs_api_client_non_found_response_count=8, gcs_api_client_requested_range_not_statisfiable_count=0, op_hflush=0, op_list_status=1, op_xattr_get_named_map=0, gcs_api_client_side_error_count=24, op_get_file_checksum=0, action_http_delete_request_failures=0, gcs_api_server_internal_error_count=0, stream_read_seek_bytes_skipped=0, stream_write_close_operations=0, op_list_files=0, files_deleted=0, op_mkdirs=1, gcs_api_client_rate_limit_error_count=0, action_http_put_request_failures=0, gcs_api_server_bad_gateway_count=0, stream_read_seek_backward_operations=0, gcs_api_server_side_error_count=0, action_http_patch_request_failures=0, stream_read_seek_operations=0, stream_read_seek_forward_operations=0, gcs_api_client_precondition_failed_response_count=1, directories_deleted=0, op_xattr_get_map=0, delegation_tokens_issued=0, op_create_min=311, op_delete_min=0, op_mkdirs_min=262, op_create_non_recursive_min=0, op_glob_status_min=183, op_hsync_min=0, op_xattr_get_named_min=0, op_list_status_min=111, op_xattr_get_named_map_min=0, stream_read_close_operations_min=0, stream_read_operations_min=0, stream_read_seek_operations_min=0, op_hflush_min=0, op_xattr_get_map_min=0, op_xattr_list_min=0, stream_write_operations_min=0, op_get_file_status_min=75, op_open_min=0, op_rename_min=0, delegation_tokens_issued_min=0, stream_write_close_operations_min=0, stream_read_close_operations_max=0, stream_read_operations_max=0, stream_read_seek_operations_max=0, op_hflush_max=0, op_xattr_list_max=0, op_xattr_get_map_max=0, op_xattr_get_named_max=0, op_create_non_recursive_max=0, op_glob_status_max=183, op_get_file_status_max=317, stream_write_close_operations_max=0, op_open_max=0, delegation_tokens_issued_max=0, op_mkdirs_max=262, op_rename_max=0, op_create_max=311, op_delete_max=0, op_list_status_max=111, op_xattr_get_named_map_max=0, stream_write_operations_max=0, op_hsync_max=0, op_list_status_mean=111, stream_read_close_operations_mean=0, op_open_mean=0, op_xattr_get_named_map_mean=0, op_xattr_list_mean=0, op_mkdirs_mean=262, stream_write_close_operations_mean=0, op_rename_mean=0, op_hsync_mean=0, delegation_tokens_issued_mean=0, stream_read_operations_mean=0, op_xattr_get_map_mean=0, op_create_mean=311, op_glob_status_mean=183, op_delete_mean=0, stream_read_seek_operations_mean=0, stream_write_operations_mean=0, op_create_non_recursive_mean=0, op_hflush_mean=0, op_xattr_get_named_mean=0, op_get_file_status_mean=196, stream_write_operations_duration=0, stream_read_operations_duration=0]
+Job [1aca558dcb0c45a8845a7923841ea1e6] finished successfully.
+done: true
+driverControlFilesUri: gs://dataproc-staging-us-central1-741125907338-4ef25cwa/google-cloud-dataproc-metainfo/26479402-e73d-409b-b0e9-1a89bc9bcb84/jobs/1aca558dcb0c45a8845a7923841ea1e6/
+driverOutputResourceUri: gs://dataproc-staging-us-central1-741125907338-4ef25cwa/google-cloud-dataproc-metainfo/26479402-e73d-409b-b0e9-1a89bc9bcb84/jobs/1aca558dcb0c45a8845a7923841ea1e6/driveroutput
+jobUuid: 43a34fb7-2ef1-3189-ada2-1bc3ab98d8eb
+placement:
+  clusterName: taxi-cluster-4
+  clusterUuid: 26479402-e73d-409b-b0e9-1a89bc9bcb84
+pysparkJob:
+  mainPythonFileUri: gs://dataproc-staging-us-central1-741125907338-4ef25cwa/google-cloud-dataproc-metainfo/26479402-e73d-409b-b0e9-1a89bc9bcb84/jobs/1aca558dcb0c45a8845a7923841ea1e6/staging/pyspark_aggregate.py#1785735464796440
+reference:
+  jobId: 1aca558dcb0c45a8845a7923841ea1e6
+  projectId: decisive-fabric-504423-f0
+status:
+  state: DONE
+  stateStartTime: '2026-08-03T05:38:43.841649Z'
+statusHistory:
+- state: PENDING
+  stateStartTime: '2026-08-03T05:37:45.097431Z'
+- state: SETUP_DONE
+  stateStartTime: '2026-08-03T05:37:45.159163Z'
+- details: Agent reported job success
+  state: RUNNING
+  stateStartTime: '2026-08-03T05:37:45.628991Z'
+yarnApplications:
+- memoryMbSeconds: '1857086'
+  name: CS131Phase3FullParquetAnalysis
+  progress: 1.0
+  state: FINISHED
+  trackingUrl: http://taxi-cluster-4-m.c.decisive-fabric-504423-f0.internal.:8088/proxy/application_1785735327269_0001/
+  vcoreSeconds: '291'
